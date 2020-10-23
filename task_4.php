@@ -32,6 +32,92 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <?php
+                            $item = [
+                                        [       "d-flex" => true,
+                                                "mt-2" => true,
+                                                "textOne" => " My Tasks",
+                                                "text" => "130 / 500"
+                                        ],
+                                        [
+                                                "d-flex" => false,
+                                                "progress" => true,
+                                                "mb-3" => true,
+                                                "progress-bar" => true,
+                                                "bg-fusion" => "400",
+                                                "style" => "65"
+                                        ],
+                                        [
+                                                "d-flex" => true,
+                                                "mt-2" => false,
+                                                "textOne" => "Transfered",
+                                                "text" => "440 TB"
+                                        ],
+                                        [
+                                                "d-flex" => false,
+                                                "progress" => true,
+                                                "mb-3" => true,
+                                                "progress-bar" => true,
+                                                "bg-fusion" => "500",
+                                                "role" => "progressbar",
+                                                "style" => "34"
+                                        ],
+                                        [
+                                                "d-flex" => true,
+                                                "mt-2" => false,
+                                                "textOne" => "Bugs Squashed",
+                                                "text" => "77%"
+                                        ],
+                                        [
+                                                "d-flex" => false,
+                                                "progress" => true,
+                                                "mb-3" => true,
+                                                "progress-bar" => true,
+                                                "bg-fusion" => "400",
+                                                "role" => "progressbar",
+                                                "style" => "77"
+                                        ],
+                                        [
+                                                "d-flex" => true,
+                                                "mt-2" => false,
+                                                "textOne" => " User Testing",
+                                                "text" => "7 days"
+                                        ],
+                                        [
+                                                "d-flex" => false,
+                                                "progress" => true,
+                                                "mb-3" => false,
+                                                "progress-bar" => true,
+                                                "bg-fusion" => "300",
+                                                "role" => "progressbar",
+                                                "style" => "84"
+                                        ]
+                                    ];
+                            foreach ($item as $items):
+                            ?>
+                            <?php if ($items["d_flex"]): ?>
+                            <?php   if ($items["mt-2"]):?>
+                                    <div class="d-flex mt-2">
+                                        <?php echo $items["textOne"];?>
+                                    </div>
+                            <?php   else:?>
+                                    <div class="d-flex">
+                                        <?php echo $items["textOne"];?>
+                                        <span class="d-inline-block ml-auto"><?php echo $items['text'];?></span>
+                                    </div>
+                            <?php endif;?>
+                            <?php else:?>
+                            <?php    if ($items["mb-3"]):?>
+                                    <div class="progress progress-sm mb-3">
+                                        <div class="progress-bar bg-fusion-<?php echo $items["bg-fusion"];?>" role="progressbar" style="width: <?php echo $items["style"];?>%;" aria-valuenow="<?php echo $items["style"];?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                            <?php   else:?>
+                                    <div class="progress progress-sm mb-g">
+                                        <div class="progress-bar bg-fusion-<?php echo $items["bg-fusion"];?>" role="progressbar" style="width: <?php echo $items["style"];?>%;" aria-valuenow="<?php echo $items["style"];?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                            <?php endif;?>
+                            <?php endif;?>
+                            <?php  endforeach;?>
                             <div class="d-flex mt-2">
                                 My Tasks
                                 <span class="d-inline-block ml-auto">130 / 500</span>
